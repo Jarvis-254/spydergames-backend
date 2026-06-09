@@ -1,0 +1,15 @@
+{% extends 'games/base.html' %}
+
+{% block content %}
+<h2>Join Match</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Enter Code:</label>
+    <input type="text" name="code" required>
+
+    <button type="submit">Join</button>
+</form>
+
+{% endblock %}

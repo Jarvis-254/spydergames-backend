@@ -1,0 +1,15 @@
+{% extends 'games/base.html' %}
+
+{% block content %}
+<h2>Create Match</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Stake:</label>
+    <input type="number" name="stake" required>
+
+    <button type="submit">Create</button>
+</form>
+
+{% endblock %}

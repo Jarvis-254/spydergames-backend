@@ -1,0 +1,22 @@
+{% extends 'games/base.html' %}
+
+{% block content %}
+
+<h2>Category: {{ round.category }}</h2>
+
+<h3>Find the odd number</h3>
+
+<div style="font-size: 20px;">
+    {% for n in round.numbers %}
+        <span style="margin:10px;">{{ n }}</span>
+    {% endfor %}
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="number" name="answer" placeholder="Your answer">
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reaction Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            margin-top: 100px;
+            background-color: #222;
+            color: white;
+        }
+        #box {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Reaction Speed Game</h1>
+<p id="status">Click the box to start</p>
+
+<div id="box">START</div>
+
+<script>
+    let startTime, endTime;
+    let waiting = false;
+
+    const box = document.getElementById("box");
+    const status = document.getElementById("status");
+
+    box.onclick = function () {
+
+        if (!waiting) {
+            // Start game
+            status.innerText = "Wait for green...";
+            box.style.backgroundColor = "red";
+            box.innerText = "";
+
+            let delay = Math.random() * 3000 + 2000; // 2–5 sec
+            waiting = true;
+
+            setTimeout(() => {
+                box.style.backgroundColor = "green";
+                box.innerText = "CLICK!";
+                startTime = new Date().getTime();
+            }, delay);
+
+        } else {
+            // Click event after green
+            if (box.style.backgroundColor === "green") {
+                endTime = new Date().getTime();
+                let reactionTime = endTime - startTime;
+
+                status.innerText = "Your time: " + reactionTime + " ms";
+                box.style.backgroundColor = "blue";
+                box.innerText = "RESTART";
+
+                waiting = false;
+            } else {
+                // Clicked too early
+                status.innerText = "Too early! Try again.";
+                box.style.backgroundColor = "blue";
+                box.innerText = "START";
+
+                waiting = false;
+            }
+        }
+    };
+</script>
+
+</body>
+</html>

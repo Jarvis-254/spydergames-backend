@@ -1,0 +1,18 @@
+{% extends 'games/base.html' %}
+
+{% block content %}
+
+<h2>Game Finished 🏁</h2>
+
+<p>Winner: {{ match.winner }}</p>
+
+<h3>Scores</h3>
+
+{% for score in match.scores.all %}
+    <p>
+        {{ score.player }} -
+        {{ score.total_points }} points
+    </p>
+{% endfor %}
+
+{% endblock %}

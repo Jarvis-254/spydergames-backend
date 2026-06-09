@@ -1,0 +1,16 @@
+{% extends 'games/base.html' %}
+
+{% block content %}
+
+<h2>Waiting for opponent...</h2>
+
+<p>Room Code: {{ match.code }}</p>
+
+<p>Share this code with player 2</p>
+
+{% if match.player2 %}
+    <p>Opponent joined! 🎮</p>
+    <a href="/game/{{ match.code }}/">Start Game</a>
+{% endif %}
+
+{% endblock %}
