@@ -39,6 +39,7 @@ DEFAULT_AUTO_FILED = "django.db.models.BIGAUTOFIELD"
 
 ALLOWED_HOSTS = [
     "JARVIS254.pythonanywhere.com",
+    "spydergames.co.ke",
     "*"
     ]
 
@@ -49,6 +50,7 @@ LOGIN_URL = "/api/auth/login/"
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
+    "spydergames.co.ke",
 ]
 
 
@@ -83,6 +85,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://192.168.1.199:3000',
+    'spydergames.co.ke',
 ]
 
 REST_FRAMEWORK = {
