@@ -40,7 +40,7 @@ DEFAULT_AUTO_FILED = "django.db.models.BIGAUTOFIELD"
 ALLOWED_HOSTS = [
     "JARVIS254.pythonanywhere.com",
     "spydergames.co.ke",
-    "*"
+    "www.spydergames.co.ke",
     ]
 
 AUTH_USER_MODEL = 'user.User'#--> # App followed by Class name >
@@ -50,7 +50,7 @@ LOGIN_URL = "/api/auth/login/"
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    "spydergames.co.ke",
+    "https://www.spydergames.co.ke",
 ]
 
 
