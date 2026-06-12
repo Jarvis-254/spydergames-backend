@@ -12,5 +12,6 @@ urlpatterns = [
     path('payment', views.payment_api),
     path('pesapal_callback', views.pesapal_callback_api),
     path('deposit', views.deposit_api),
+    path('register/', views.register_api),
     
 ]

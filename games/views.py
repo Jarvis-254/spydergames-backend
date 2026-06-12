@@ -284,6 +284,26 @@ def pesapal_callback_api(request):
         transaction_type = "deposit",
     )
     return HttpResponse("OK")
+from django.conf import settings
+from django.contrib.auth import get_user_model
+User = get_user_model
+
+@api_view(["POST"])
+def register_api(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+
+    if User.objects.filter(username=username).exist():
+        return Response({
+            "error" : "Username alreadY exist"
+        }, status=400)
+    user = User.objects.create_user(
+        username = username,
+        password = password
+    )
+    return Response({
+        "message" : "Account created successfully"
+    })
 
 
 

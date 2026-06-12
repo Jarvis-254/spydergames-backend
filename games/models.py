@@ -71,6 +71,7 @@ class Match(models.Model):
             "Insufficient Balance"
         )
         match.player2 = user
+        match.status = GameStatus.ACTIVE
         match.save()
         return match
 
