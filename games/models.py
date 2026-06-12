@@ -23,7 +23,7 @@ class Match(models.Model):
     """ It controls everything Player, Stake Game id e.t.c """
     id           = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code         = models.CharField(max_length=8, unique=True, db_index=True, null=True, blank=True)
-    started_at   = models.DateTimeField(auto_now_add=True)
+    started_at   = models.DateTimeField(null=True, blank=True)
     updated_at   = models.DateTimeField(auto_now=True)
     finished_at  = models.DateTimeField(null=True, blank=True)
     player1      = models.ForeignKey(User, on_delete=models.CASCADE, related_name='player1')

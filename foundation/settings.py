@@ -35,7 +35,12 @@ SECRET_KEY = 'django-insecure--1b%!8vepk99(zezkdltqk2clcjg)_@yo=!m#kkzrsq19i42!-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+DEFAULT_AUTO_FILED = "django.db.models.BIGAUTOFIELD"
+
+ALLOWED_HOSTS = [
+    "JARVIS254.pythonanywhere.com",
+    "*"
+    ]
 
 AUTH_USER_MODEL = 'user.User'#--> # App followed by Class name >
 
