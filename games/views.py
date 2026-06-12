@@ -286,7 +286,7 @@ def pesapal_callback_api(request):
     return HttpResponse("OK")
 from django.conf import settings
 from django.contrib.auth import get_user_model
-User = get_user_model
+User = settings.AUTH_USER_MODEL
 
 @api_view(["POST"])
 def register_api(request):
