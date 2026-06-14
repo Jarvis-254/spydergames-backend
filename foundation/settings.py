@@ -83,9 +83,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://192.168.1.199:3000',
-    'spydergames.co.ke',
+    "http://localhost:3000",
+    "http://192.168.1.199:3000",
+    "https://www.spydergames.co.ke",
 ]
 
 REST_FRAMEWORK = {
