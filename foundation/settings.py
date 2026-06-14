@@ -35,10 +35,10 @@ SECRET_KEY = 'django-insecure--1b%!8vepk99(zezkdltqk2clcjg)_@yo=!m#kkzrsq19i42!-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-DEFAULT_AUTO_FILED = "django.db.models.BIGAUTOFIELD"
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 ALLOWED_HOSTS = [
-    "JARVIS254.pythonanywhere.com",
+    "spydergames.pythonanywhere.com",
     "spydergames.co.ke",
     "www.spydergames.co.ke",
     ]
@@ -86,6 +86,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://192.168.1.199:3000",
     "https://www.spydergames.co.ke",
+    "https://spydergames.co.ke",
 ]
 
 REST_FRAMEWORK = {
